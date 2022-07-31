@@ -13,8 +13,16 @@ namespace P05AplikacjaZawodnicy
 
         public void Odswiez()
         {
+            string sortowanie = null;
+            if (rbImie.Checked)
+                sortowanie = (string)rbImie.Tag;
+            if (rbNazwisko.Checked)
+                sortowanie = (string)rbNazwisko.Tag;
+            if (rbWzrost.Checked)
+                sortowanie = (string)rbWzrost.Tag;
+
             ZawodnicyRepository zr = new ZawodnicyRepository();
-            Zawodnik[] zawodnicy = zr.WczytajZawodnikow(txtFiltr.Text);
+            Zawodnik[] zawodnicy = zr.WczytajZawodnikow(txtFiltr.Text, sortowanie);
             lbDane.DataSource = zawodnicy;
             lbDane.DisplayMember = "WidoczneDane";
             lblLicznaZaimportowanychDanych.Text = zawodnicy.Length.ToString();

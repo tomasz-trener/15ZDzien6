@@ -121,10 +121,11 @@
             this.rbImie.AutoSize = true;
             this.rbImie.Location = new System.Drawing.Point(297, 222);
             this.rbImie.Name = "rbImie";
-            this.rbImie.Size = new System.Drawing.Size(44, 17);
+            this.rbImie.Size = new System.Drawing.Size(58, 17);
             this.rbImie.TabIndex = 8;
             this.rbImie.TabStop = true;
-            this.rbImie.Text = "Imie";
+            this.rbImie.Tag = "imie";
+            this.rbImie.Text = "Imieniu";
             this.rbImie.UseVisualStyleBackColor = true;
             this.rbImie.Click += new System.EventHandler(this.rbKolumna_Click);
             // 
@@ -133,9 +134,9 @@
             this.label3.AutoSize = true;
             this.label3.Location = new System.Drawing.Point(298, 203);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(34, 13);
+            this.label3.Size = new System.Drawing.Size(49, 13);
             this.label3.TabIndex = 9;
-            this.label3.Text = "Sortuj";
+            this.label3.Text = "Sortuj po";
             // 
             // rbNazwisko
             // 
@@ -145,7 +146,8 @@
             this.rbNazwisko.Size = new System.Drawing.Size(71, 17);
             this.rbNazwisko.TabIndex = 10;
             this.rbNazwisko.TabStop = true;
-            this.rbNazwisko.Text = "Nazwisko";
+            this.rbNazwisko.Tag = "nazwisko";
+            this.rbNazwisko.Text = "Nazwisku";
             this.rbNazwisko.UseVisualStyleBackColor = true;
             this.rbNazwisko.Click += new System.EventHandler(this.rbKolumna_Click);
             // 
@@ -154,10 +156,11 @@
             this.rbWzrost.AutoSize = true;
             this.rbWzrost.Location = new System.Drawing.Point(297, 268);
             this.rbWzrost.Name = "rbWzrost";
-            this.rbWzrost.Size = new System.Drawing.Size(58, 17);
+            this.rbWzrost.Size = new System.Drawing.Size(69, 17);
             this.rbWzrost.TabIndex = 11;
             this.rbWzrost.TabStop = true;
-            this.rbWzrost.Text = "Wzrost";
+            this.rbWzrost.Tag = "wzrost";
+            this.rbWzrost.Text = "Wzroście";
             this.rbWzrost.UseVisualStyleBackColor = true;
             this.rbWzrost.Click += new System.EventHandler(this.rbKolumna_Click);
             // 

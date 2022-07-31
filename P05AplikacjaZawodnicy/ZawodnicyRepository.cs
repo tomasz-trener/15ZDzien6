@@ -10,12 +10,15 @@ namespace P05AplikacjaZawodnicy
     {
         private string connString = "Data Source=.\\sqlexpress;Initial Catalog=A_Zawodnicy;Integrated Security=True";
 
-        public Zawodnik[] WczytajZawodnikow(string filtr)
+        public Zawodnik[] WczytajZawodnikow(string filtr, string sortowanie)
 
         {
             string sql = $"select * from zawodnicy where kraj like '%{filtr}%'" +
                 $" or imie like '%{filtr}%'  " +
                 $" or nazwisko like '%{filtr}%'  ";
+
+            if (sortowanie != null)
+                sql += " order by " + sortowanie;
 
             PolaczenieZBaza pzb = new PolaczenieZBaza(connString);
 
@@ -54,7 +57,15 @@ namespace P05AplikacjaZawodnicy
         internal void DodajZawodnika(Zawodnik zawodnik)
         {
             string sql = "insert into zawodnicy (imie, nazwisko,kraj,data_ur,wzrost,waga) values ('{0}','{1}','{2}','{3}',{4},{5})";
-            sql = string.Format(sql, zawodnik.Imie, zawodnik.Nazwisko, zawodnik.Kraj, zawodnik.DataUr, zawodnik.Wzrost, zawodnik.Waga);
+            sql = string.Format(sql, zawodnik.Imie, zawodnik.Nazwisko, zawodnik.Kraj, zawodnik.DataUr.ToString("yyyy-MM-dd"), zawodnik.Wzrost, zawodnik.Waga);
+
+            PolaczenieZBaza pzb = new PolaczenieZBaza(connString);
+            pzb.WykonajZapytanie(sql);
+        }
+
+        public void UsunZawodnika(Zawodnik zawodnik)
+        {
+            string sql = $"delete zawodnicy where id_zawodnika ={zawodnik.Id_zawodnika}";
 
             PolaczenieZBaza pzb = new PolaczenieZBaza(connString);
             pzb.WykonajZapytanie(sql);

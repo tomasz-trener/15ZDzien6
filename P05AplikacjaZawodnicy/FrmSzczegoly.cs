@@ -40,6 +40,7 @@ namespace P05AplikacjaZawodnicy
             dtpDataUr.Value = zawodnik.DataUr;
             numWaga.Value = zawodnik.Waga;
             numWzrost.Value = zawodnik.Wzrost;
+            btnUsun.Visible = true;
         }
 
         private void btnZapisz_Click(object sender, EventArgs e)
@@ -81,6 +82,14 @@ namespace P05AplikacjaZawodnicy
 
         private void btnUsun_Click(object sender, EventArgs e)
         {
+            DialogResult dr = MessageBox.Show("Czy chcesz usnąc zawodnika?", "Usuwanie", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (dr == DialogResult.Yes)
+            {
+                ZawodnicyRepository zr = new ZawodnicyRepository();
+                zr.UsunZawodnika(zawodnik);
+                frmZawodnicy.Odswiez();
+                Close();
+            }
         }
     }
 }
