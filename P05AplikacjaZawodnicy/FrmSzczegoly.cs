@@ -53,6 +53,14 @@ namespace P05AplikacjaZawodnicy
                 ManagerPogody mp = new ManagerPogody(Jednostka.Celcjusz);
                 double temp = mp.PodajTemperature(txtMiasto.Text);
                 lblTemperatura.Text = temp.ToString();
+
+                TemperaturyRepository tr = new TemperaturyRepository();
+                Temperatura temperatura = new Temperatura();
+                temperatura.Data = DateTime.Now;
+                temperatura.Wartosc = Convert.ToInt32(temp);
+                temperatura.Miasto = txtMiasto.Text;
+
+                tr.DodajTemperature(temperatura);
             }
         }
 

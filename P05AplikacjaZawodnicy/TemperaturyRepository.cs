@@ -13,7 +13,7 @@ namespace P05AplikacjaZawodnicy
         public void DodajTemperature(Temperatura temp)
         {
             string sql = "insert into historiaTemperatury (nazwaMiasta,dataSprawdzenia,temperatura) values ('{0}','{1}',{2})";
-            sql = string.Format(sql, temp.Miasto, temp.Data.ToString("yyyy-MM-dd"), temp.Wartosc);
+            sql = string.Format(sql, temp.Miasto, temp.Data.ToString("yyyy-MM-dd hh:mm:ss"), temp.Wartosc);
 
             PolaczenieZBaza pzb = new PolaczenieZBaza(connString);
             pzb.WykonajZapytanie(sql);
