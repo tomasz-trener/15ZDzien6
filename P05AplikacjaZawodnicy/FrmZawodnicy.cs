@@ -34,6 +34,8 @@ namespace P05AplikacjaZawodnicy
 
         private void btnNowy_Click(object sender, EventArgs e)
         {
+            FrmSzczegoly fs = new FrmSzczegoly(this);
+            fs.Show();
         }
 
         private void rbKolumna_Click(object sender, EventArgs e)

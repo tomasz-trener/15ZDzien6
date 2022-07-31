@@ -50,5 +50,14 @@ namespace P05AplikacjaZawodnicy
             PolaczenieZBaza pzb = new PolaczenieZBaza(connString);
             pzb.WykonajZapytanie(sql);
         }
+
+        internal void DodajZawodnika(Zawodnik zawodnik)
+        {
+            string sql = "insert into zawodnicy (imie, nazwisko,kraj,data_ur,wzrost,waga) values ('{0}','{1}','{2}','{3}',{4},{5})";
+            sql = string.Format(sql, zawodnik.Imie, zawodnik.Nazwisko, zawodnik.Kraj, zawodnik.DataUr, zawodnik.Wzrost, zawodnik.Waga);
+
+            PolaczenieZBaza pzb = new PolaczenieZBaza(connString);
+            pzb.WykonajZapytanie(sql);
+        }
     }
 }

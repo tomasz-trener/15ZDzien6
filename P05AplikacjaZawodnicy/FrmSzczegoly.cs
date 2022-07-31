@@ -21,15 +21,19 @@ namespace P05AplikacjaZawodnicy
             Nowy,
         }
 
+        private TrybOkienka tryb => zawodnik == null ? TrybOkienka.Nowy : TrybOkienka.Edycja;
+
         public FrmSzczegoly(FrmZawodnicy frmZawodnicy)
         {
+            // to jest konstuktor, który wywoujemy gdy tworzymy nowego zawodnika
+            this.frmZawodnicy = frmZawodnicy;
             InitializeComponent();
         }
 
         public FrmSzczegoly(FrmZawodnicy frmZawodnicy, Zawodnik zawodnik) : this(frmZawodnicy)
         {
+            // to konsturktor gdy edytujemy zawodnika
             this.zawodnik = zawodnik;
-            this.frmZawodnicy = frmZawodnicy;
             txtImie.Text = zawodnik.Imie;
             txtNazwisko.Text = zawodnik.Nazwisko;
             txtKraj.Text = zawodnik.Kraj;
@@ -40,18 +44,35 @@ namespace P05AplikacjaZawodnicy
 
         private void btnZapisz_Click(object sender, EventArgs e)
         {
+            ZawodnicyRepository zr = new ZawodnicyRepository();
+
+            if (tryb == TrybOkienka.Edycja)
+            {
+                zczytajDaneZawodnika();
+                zr.Edytuj(zawodnik);
+            }
+            else if (tryb == TrybOkienka.Nowy)
+            {
+                zawodnik = new Zawodnik();
+                zczytajDaneZawodnika();
+                zr.DodajZawodnika(zawodnik);
+            }
+            else
+                throw new Exception("Nieznany tryb");
+
+            frmZawodnicy.Odswiez();
+
+            Close();
+        }
+
+        private void zczytajDaneZawodnika()
+        {
             zawodnik.Imie = txtImie.Text;
             zawodnik.Nazwisko = txtNazwisko.Text;
             zawodnik.Kraj = txtKraj.Text;
             zawodnik.DataUr = dtpDataUr.Value;
             zawodnik.Waga = Convert.ToInt32(numWaga.Value);
             zawodnik.Wzrost = Convert.ToInt32(numWaga.Value);
-
-            ZawodnicyRepository zr = new ZawodnicyRepository();
-            zr.Edytuj(zawodnik);
-            frmZawodnicy.Odswiez();
-
-            Close();
         }
 
         private void uzupelnijPola()
