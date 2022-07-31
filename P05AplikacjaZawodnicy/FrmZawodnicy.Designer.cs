@@ -33,7 +33,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.lblLicznaZaimportowanychDanych = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.txtKraj = new System.Windows.Forms.TextBox();
+            this.txtFiltr = new System.Windows.Forms.TextBox();
             this.btnSzczegoly = new System.Windows.Forms.Button();
             this.btnNowy = new System.Windows.Forms.Button();
             this.rbImie = new System.Windows.Forms.RadioButton();
@@ -84,17 +84,17 @@
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(12, 53);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(25, 13);
+            this.label2.Size = new System.Drawing.Size(23, 13);
             this.label2.TabIndex = 4;
-            this.label2.Text = "Kraj";
+            this.label2.Text = "Filtr";
             // 
-            // txtKraj
+            // txtFiltr
             // 
-            this.txtKraj.Location = new System.Drawing.Point(43, 50);
-            this.txtKraj.Name = "txtKraj";
-            this.txtKraj.Size = new System.Drawing.Size(248, 20);
-            this.txtKraj.TabIndex = 5;
-            this.txtKraj.Text = "pol";
+            this.txtFiltr.Location = new System.Drawing.Point(41, 50);
+            this.txtFiltr.Name = "txtFiltr";
+            this.txtFiltr.Size = new System.Drawing.Size(250, 20);
+            this.txtFiltr.TabIndex = 5;
+            this.txtFiltr.Text = "pol";
             // 
             // btnSzczegoly
             // 
@@ -183,7 +183,7 @@
             this.Controls.Add(this.rbImie);
             this.Controls.Add(this.btnNowy);
             this.Controls.Add(this.btnSzczegoly);
-            this.Controls.Add(this.txtKraj);
+            this.Controls.Add(this.txtFiltr);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.lblLicznaZaimportowanychDanych);
             this.Controls.Add(this.label1);
@@ -203,7 +203,7 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label lblLicznaZaimportowanychDanych;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox txtKraj;
+        private System.Windows.Forms.TextBox txtFiltr;
         private System.Windows.Forms.Button btnSzczegoly;
         private System.Windows.Forms.Button btnNowy;
         private System.Windows.Forms.RadioButton rbImie;

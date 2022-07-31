@@ -58,10 +58,11 @@
     <Compile Include="FrmZawodnicy.Designer.cs">
       <DependentUpon>FrmZawodnicy.cs</DependentUpon>
     </Compile>
-    <Compile Include="ManagerZawodnikow.cs" />
+    <Compile Include="PolaczenieZBaza.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Sortowanie.cs" />
+    <Compile Include="ZawodnicyRepository.cs" />
     <Compile Include="Zawodnik.cs" />
     <EmbeddedResource Include="FrmSzczegoly.resx">
       <DependentUpon>FrmSzczegoly.cs</DependentUpon>
