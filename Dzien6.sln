@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "P03TabliceTablic", "P03Tabl
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "P04AplikacjaOkienkowa", "P04AplikacjaOkienkowa\P04AplikacjaOkienkowa.csproj", "{2AB2E153-69FF-4688-A190-67A2E7404506}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "P05AplikacjaZawodnicy", "P05AplikacjaZawodnicy\P05AplikacjaZawodnicy.csproj", "{284FF31B-769D-4870-A383-B38DED925502}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,10 @@ Global
 		{2AB2E153-69FF-4688-A190-67A2E7404506}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2AB2E153-69FF-4688-A190-67A2E7404506}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2AB2E153-69FF-4688-A190-67A2E7404506}.Release|Any CPU.Build.0 = Release|Any CPU
+		{284FF31B-769D-4870-A383-B38DED925502}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{284FF31B-769D-4870-A383-B38DED925502}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{284FF31B-769D-4870-A383-B38DED925502}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{284FF31B-769D-4870-A383-B38DED925502}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

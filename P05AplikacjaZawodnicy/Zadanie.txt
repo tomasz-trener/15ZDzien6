@@ -1,0 +1,8 @@
+﻿
+
+
+ 1) Po klkinięciu przycisku Szczegóły 
+ niech pojawi się nowy formularz wyświetlajacy szczgóły zaznaczoneg ozawodnika
+
+ prześlij informacje o zaawodniku do nowego formularza , korzystając 
+ z metodologii zaprezentowanej w poprzednim projekie 
