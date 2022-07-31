@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{3D8FC05E-B66C-483B-99C4-8C68D3712368}</ProjectGuid>
+    <ProjectGuid>{DAABC255-8384-4B10-AB44-FFC9C5132C2E}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>P02PolaczenieZBaza</RootNamespace>
-    <AssemblyName>P02PolaczenieZBaza</AssemblyName>
+    <RootNamespace>P03TabliceTablic</RootNamespace>
+    <AssemblyName>P03TabliceTablic</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -43,7 +43,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="PolaczenieZBaza.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
