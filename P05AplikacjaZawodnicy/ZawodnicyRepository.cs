@@ -27,6 +27,7 @@ namespace P05AplikacjaZawodnicy
             {
                 Zawodnik ityZawodnik = new Zawodnik();
 
+                ityZawodnik.Id_zawodnika = (int)wynik[i][0];
                 ityZawodnik.Imie = (string)wynik[i][2];
                 ityZawodnik.Nazwisko = (string)wynik[i][3];
                 ityZawodnik.Kraj = (string)wynik[i][4];
@@ -45,6 +46,9 @@ namespace P05AplikacjaZawodnicy
             string sql = "update zawodnicy set imie='{0}', nazwisko='{1}', kraj='{2}', data_ur='{3}', wzrost={4}, waga={5} where id_zawodnika={6}";
 
             sql = string.Format(sql, z.Imie, z.Nazwisko, z.Kraj, z.DataUr.ToString("yyyy-MM-dd"), z.Wzrost, z.Waga, z.Id_zawodnika);
+
+            PolaczenieZBaza pzb = new PolaczenieZBaza(connString);
+            pzb.WykonajZapytanie(sql);
         }
     }
 }

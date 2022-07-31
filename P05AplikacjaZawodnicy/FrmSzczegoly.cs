@@ -12,6 +12,8 @@ namespace P05AplikacjaZawodnicy
 {
     public partial class FrmSzczegoly : Form
     {
+        private Zawodnik zawodnik;
+
         private enum TrybOkienka
         {
             Edycja,
@@ -25,6 +27,7 @@ namespace P05AplikacjaZawodnicy
 
         public FrmSzczegoly(FrmZawodnicy frmZawodnicy, Zawodnik zawodnik) : this(frmZawodnicy)
         {
+            this.zawodnik = zawodnik;
             txtImie.Text = zawodnik.Imie;
             txtNazwisko.Text = zawodnik.Nazwisko;
             txtKraj.Text = zawodnik.Kraj;
@@ -35,6 +38,15 @@ namespace P05AplikacjaZawodnicy
 
         private void btnZapisz_Click(object sender, EventArgs e)
         {
+            zawodnik.Imie = txtImie.Text;
+            zawodnik.Nazwisko = txtNazwisko.Text;
+            zawodnik.Kraj = txtKraj.Text;
+            zawodnik.DataUr = dtpDataUr.Value;
+            zawodnik.Waga = Convert.ToInt32(numWaga.Value);
+            zawodnik.Wzrost = Convert.ToInt32(numWaga.Value);
+
+            ZawodnicyRepository zr = new ZawodnicyRepository();
+            zr.Edytuj(zawodnik);
         }
 
         private void uzupelnijPola()
