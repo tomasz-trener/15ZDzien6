@@ -11,8 +11,10 @@ namespace P05AplikacjaZawodnicy
             InitializeComponent();
         }
 
-        public void Odswiez(Zawodnik[] zawodnicy)
+        public void Odswiez()
         {
+            ZawodnicyRepository zr = new ZawodnicyRepository();
+            Zawodnik[] zawodnicy = zr.WczytajZawodnikow(txtFiltr.Text);
             lbDane.DataSource = zawodnicy;
             lbDane.DisplayMember = "WidoczneDane";
             lblLicznaZaimportowanychDanych.Text = zawodnicy.Length.ToString();
@@ -20,10 +22,7 @@ namespace P05AplikacjaZawodnicy
 
         private void btnWczytaj_Click(object sender, EventArgs e)
         {
-            ZawodnicyRepository zr = new ZawodnicyRepository();
-
-            Zawodnik[] zawodnicy = zr.WczytajZawodnikow(txtFiltr.Text);
-            Odswiez(zawodnicy);
+            Odswiez();
         }
 
         private void btnSzczegoly_Click(object sender, EventArgs e)

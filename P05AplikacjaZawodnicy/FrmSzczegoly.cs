@@ -13,6 +13,7 @@ namespace P05AplikacjaZawodnicy
     public partial class FrmSzczegoly : Form
     {
         private Zawodnik zawodnik;
+        private FrmZawodnicy frmZawodnicy;
 
         private enum TrybOkienka
         {
@@ -28,6 +29,7 @@ namespace P05AplikacjaZawodnicy
         public FrmSzczegoly(FrmZawodnicy frmZawodnicy, Zawodnik zawodnik) : this(frmZawodnicy)
         {
             this.zawodnik = zawodnik;
+            this.frmZawodnicy = frmZawodnicy;
             txtImie.Text = zawodnik.Imie;
             txtNazwisko.Text = zawodnik.Nazwisko;
             txtKraj.Text = zawodnik.Kraj;
@@ -47,6 +49,9 @@ namespace P05AplikacjaZawodnicy
 
             ZawodnicyRepository zr = new ZawodnicyRepository();
             zr.Edytuj(zawodnik);
+            frmZawodnicy.Odswiez();
+
+            Close();
         }
 
         private void uzupelnijPola()
