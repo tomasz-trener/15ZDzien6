@@ -38,6 +38,9 @@ namespace P05AplikacjaZawodnicy
                 ityZawodnik.Wzrost = (int)wynik[i][6];
                 ityZawodnik.Waga = (int)wynik[i][7];
 
+                if (wynik[i][8] != DBNull.Value)
+                    ityZawodnik.Miasto = (string)wynik[i][8];
+
                 zawodnicy[i] = ityZawodnik;
             }
 
@@ -46,9 +49,9 @@ namespace P05AplikacjaZawodnicy
 
         public void Edytuj(Zawodnik z)
         {
-            string sql = "update zawodnicy set imie='{0}', nazwisko='{1}', kraj='{2}', data_ur='{3}', wzrost={4}, waga={5} where id_zawodnika={6}";
+            string sql = "update zawodnicy set imie='{0}', nazwisko='{1}', kraj='{2}', data_ur='{3}', wzrost={4}, waga={5}, miasto='{6}' where id_zawodnika={7}";
 
-            sql = string.Format(sql, z.Imie, z.Nazwisko, z.Kraj, z.DataUr.ToString("yyyy-MM-dd"), z.Wzrost, z.Waga, z.Id_zawodnika);
+            sql = string.Format(sql, z.Imie, z.Nazwisko, z.Kraj, z.DataUr.ToString("yyyy-MM-dd"), z.Wzrost, z.Waga, z.Miasto, z.Id_zawodnika);
 
             PolaczenieZBaza pzb = new PolaczenieZBaza(connString);
             pzb.WykonajZapytanie(sql);
@@ -56,8 +59,8 @@ namespace P05AplikacjaZawodnicy
 
         internal void DodajZawodnika(Zawodnik zawodnik)
         {
-            string sql = "insert into zawodnicy (imie, nazwisko,kraj,data_ur,wzrost,waga) values ('{0}','{1}','{2}','{3}',{4},{5})";
-            sql = string.Format(sql, zawodnik.Imie, zawodnik.Nazwisko, zawodnik.Kraj, zawodnik.DataUr.ToString("yyyy-MM-dd"), zawodnik.Wzrost, zawodnik.Waga);
+            string sql = "insert into zawodnicy (imie, nazwisko,kraj,data_ur,wzrost,waga, miasto) values ('{0}','{1}','{2}','{3}',{4},{5},'{6}')";
+            sql = string.Format(sql, zawodnik.Imie, zawodnik.Nazwisko, zawodnik.Kraj, zawodnik.DataUr.ToString("yyyy-MM-dd"), zawodnik.Wzrost, zawodnik.Waga, zawodnik.Miasto);
 
             PolaczenieZBaza pzb = new PolaczenieZBaza(connString);
             pzb.WykonajZapytanie(sql);

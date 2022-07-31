@@ -58,10 +58,13 @@
     <Compile Include="FrmZawodnicy.Designer.cs">
       <DependentUpon>FrmZawodnicy.cs</DependentUpon>
     </Compile>
+    <Compile Include="ManagerPogody.cs" />
     <Compile Include="PolaczenieZBaza.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Sortowanie.cs" />
+    <Compile Include="Temperatura.cs" />
+    <Compile Include="TemperaturyRepository.cs" />
     <Compile Include="ZawodnicyRepository.cs" />
     <Compile Include="Zawodnik.cs" />
     <EmbeddedResource Include="FrmSzczegoly.resx">

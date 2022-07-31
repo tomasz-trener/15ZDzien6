@@ -40,7 +40,20 @@ namespace P05AplikacjaZawodnicy
             dtpDataUr.Value = zawodnik.DataUr;
             numWaga.Value = zawodnik.Waga;
             numWzrost.Value = zawodnik.Wzrost;
+            txtMiasto.Text = zawodnik.Miasto;
+
             btnUsun.Visible = true;
+            WczytajTemperature();
+        }
+
+        private void WczytajTemperature()
+        {
+            if (!string.IsNullOrWhiteSpace(txtMiasto.Text))
+            {
+                ManagerPogody mp = new ManagerPogody(Jednostka.Celcjusz);
+                double temp = mp.PodajTemperature(txtMiasto.Text);
+                lblTemperatura.Text = temp.ToString();
+            }
         }
 
         private void btnZapisz_Click(object sender, EventArgs e)
@@ -74,6 +87,7 @@ namespace P05AplikacjaZawodnicy
             zawodnik.DataUr = dtpDataUr.Value;
             zawodnik.Waga = Convert.ToInt32(numWaga.Value);
             zawodnik.Wzrost = Convert.ToInt32(numWaga.Value);
+            zawodnik.Miasto = txtMiasto.Text;
         }
 
         private void uzupelnijPola()

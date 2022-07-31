@@ -18,6 +18,7 @@ namespace P05AplikacjaZawodnicy
         public DateTime DataUr;
         public int Wzrost;
         public int Waga;
+        public string Miasto;
 
         public string WidoczneDane
         {
