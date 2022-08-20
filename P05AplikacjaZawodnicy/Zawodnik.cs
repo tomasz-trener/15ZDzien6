@@ -8,7 +8,7 @@ namespace P05AplikacjaZawodnicy
 {
     public class Zawodnik
     {
-        //id_zawodnika;id_trenera;imie;nazwisko;kraj;data urodzenia;wzrost;waga
+        //id_zawodnika;id_trenera;imie;nazwisko;kraj;data urodzenia;wzrost;waga 
 
         public int Id_zawodnika;
         public int Id_trenera;
