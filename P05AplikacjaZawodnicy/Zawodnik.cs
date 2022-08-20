@@ -15,10 +15,21 @@ namespace P05AplikacjaZawodnicy
         public string Imie;
         public string Nazwisko { get; set; }
         public string Kraj;
-        public DateTime DataUr;
+        public DateTime? DataUr;
         public int Wzrost;
         public int Waga;
         public string Miasto;
+
+        public string DataUrSQL
+        {
+            get
+            {
+                if (DataUr == null)
+                    return "null";
+
+                return $"'{((DateTime)DataUr).ToString("yyyyMMdd")}'";
+            }
+        }
 
         public string WidoczneDane
         {
@@ -32,7 +43,7 @@ namespace P05AplikacjaZawodnicy
         {
             get
             {
-                return $"{Id_zawodnika};{Id_trenera};{Imie};{Nazwisko};{Kraj};{DataUr.ToString("yyyy-MM-dd")};{Wzrost};{Waga}";
+                return $"{Id_zawodnika};{Id_trenera};{Imie};{Nazwisko};{Kraj};{DataUr?.ToString("yyyy-MM-dd")};{Wzrost};{Waga}";
             }
         }
 

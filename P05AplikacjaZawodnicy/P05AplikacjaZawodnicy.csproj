@@ -59,6 +59,12 @@
       <DependentUpon>FrmZawodnicy.cs</DependentUpon>
     </Compile>
     <Compile Include="ManagerPogody.cs" />
+    <Compile Include="NullableDateTimePicker.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="NullableDateTimePicker.Designer.cs">
+      <DependentUpon>NullableDateTimePicker.cs</DependentUpon>
+    </Compile>
     <Compile Include="PolaczenieZBaza.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -72,6 +78,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FrmZawodnicy.resx">
       <DependentUpon>FrmZawodnicy.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NullableDateTimePicker.resx">
+      <DependentUpon>NullableDateTimePicker.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

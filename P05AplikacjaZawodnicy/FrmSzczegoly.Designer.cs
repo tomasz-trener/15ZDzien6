@@ -37,7 +37,6 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            this.dtpDataUr = new System.Windows.Forms.DateTimePicker();
             this.numWzrost = new System.Windows.Forms.NumericUpDown();
             this.numWaga = new System.Windows.Forms.NumericUpDown();
             this.btnZapisz = new System.Windows.Forms.Button();
@@ -46,6 +45,7 @@
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.lblTemperatura = new System.Windows.Forms.Label();
+            this.dtpDataUr = new P05AplikacjaZawodnicy.NullableDateTimePicker();
             ((System.ComponentModel.ISupportInitialize)(this.numWzrost)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numWaga)).BeginInit();
             this.SuspendLayout();
@@ -124,14 +124,6 @@
             this.label6.Size = new System.Drawing.Size(40, 13);
             this.label6.TabIndex = 8;
             this.label6.Text = "Wzrost";
-            // 
-            // dtpDataUr
-            // 
-            this.dtpDataUr.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpDataUr.Location = new System.Drawing.Point(12, 160);
-            this.dtpDataUr.Name = "dtpDataUr";
-            this.dtpDataUr.Size = new System.Drawing.Size(155, 20);
-            this.dtpDataUr.TabIndex = 12;
             // 
             // numWzrost
             // 
@@ -213,11 +205,19 @@
             this.lblTemperatura.TabIndex = 20;
             this.lblTemperatura.Text = "?";
             // 
+            // dtpDataUr
+            // 
+            this.dtpDataUr.Location = new System.Drawing.Point(12, 162);
+            this.dtpDataUr.Name = "dtpDataUr";
+            this.dtpDataUr.Size = new System.Drawing.Size(155, 20);
+            this.dtpDataUr.TabIndex = 21;
+            // 
             // FrmSzczegoly
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(190, 407);
+            this.ClientSize = new System.Drawing.Size(184, 407);
+            this.Controls.Add(this.dtpDataUr);
             this.Controls.Add(this.lblTemperatura);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.txtMiasto);
@@ -226,7 +226,6 @@
             this.Controls.Add(this.btnZapisz);
             this.Controls.Add(this.numWaga);
             this.Controls.Add(this.numWzrost);
-            this.Controls.Add(this.dtpDataUr);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label3);
@@ -256,7 +255,6 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.DateTimePicker dtpDataUr;
         private System.Windows.Forms.NumericUpDown numWzrost;
         private System.Windows.Forms.NumericUpDown numWaga;
         private System.Windows.Forms.Button btnZapisz;
@@ -265,5 +263,6 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label lblTemperatura;
+        private NullableDateTimePicker dtpDataUr;
     }
 }

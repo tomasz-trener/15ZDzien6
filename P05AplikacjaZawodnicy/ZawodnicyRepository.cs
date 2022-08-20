@@ -34,7 +34,10 @@ namespace P05AplikacjaZawodnicy
                 ityZawodnik.Imie = (string)wynik[i][2];
                 ityZawodnik.Nazwisko = (string)wynik[i][3];
                 ityZawodnik.Kraj = (string)wynik[i][4];
-                ityZawodnik.DataUr = (DateTime)wynik[i][5];
+
+                if (wynik[i][5] != DBNull.Value)
+                    ityZawodnik.DataUr = (DateTime)wynik[i][5];
+
                 ityZawodnik.Wzrost = (int)wynik[i][6];
                 ityZawodnik.Waga = (int)wynik[i][7];
 
@@ -49,9 +52,9 @@ namespace P05AplikacjaZawodnicy
 
         public void Edytuj(Zawodnik z)
         {
-            string sql = "update zawodnicy set imie='{0}', nazwisko='{1}', kraj='{2}', data_ur='{3}', wzrost={4}, waga={5}, miasto='{6}' where id_zawodnika={7}";
+            string sql = "update zawodnicy set imie='{0}', nazwisko='{1}', kraj='{2}', data_ur={3}, wzrost={4}, waga={5}, miasto='{6}' where id_zawodnika={7}";
 
-            sql = string.Format(sql, z.Imie, z.Nazwisko, z.Kraj, z.DataUr.ToString("yyyy-MM-dd"), z.Wzrost, z.Waga, z.Miasto, z.Id_zawodnika);
+            sql = string.Format(sql, z.Imie, z.Nazwisko, z.Kraj, z.DataUrSQL, z.Wzrost, z.Waga, z.Miasto, z.Id_zawodnika);
 
             PolaczenieZBaza pzb = new PolaczenieZBaza(connString);
             pzb.WykonajZapytanie(sql);
@@ -59,8 +62,8 @@ namespace P05AplikacjaZawodnicy
 
         internal void DodajZawodnika(Zawodnik zawodnik)
         {
-            string sql = "insert into zawodnicy (imie, nazwisko,kraj,data_ur,wzrost,waga, miasto) values ('{0}','{1}','{2}','{3}',{4},{5},'{6}')";
-            sql = string.Format(sql, zawodnik.Imie, zawodnik.Nazwisko, zawodnik.Kraj, zawodnik.DataUr.ToString("yyyy-MM-dd"), zawodnik.Wzrost, zawodnik.Waga, zawodnik.Miasto);
+            string sql = "insert into zawodnicy (imie, nazwisko,kraj,data_ur,wzrost,waga, miasto) values ('{0}','{1}','{2}',{3},{4},{5},'{6}')";
+            sql = string.Format(sql, zawodnik.Imie, zawodnik.Nazwisko, zawodnik.Kraj, zawodnik.DataUrSQL, zawodnik.Wzrost, zawodnik.Waga, zawodnik.Miasto);
 
             PolaczenieZBaza pzb = new PolaczenieZBaza(connString);
             pzb.WykonajZapytanie(sql);
